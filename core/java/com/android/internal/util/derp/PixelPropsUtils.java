@@ -41,7 +41,6 @@ import java.util.Map;
 public class PixelPropsUtils {
 
     private static final String TAG = PixelPropsUtils.class.getSimpleName();
-    private static final String DEVICE = "ro.derp.device";
 
     private static final String PACKAGE_GMS = "com.google.android.gms";
     private static final ComponentName GMS_ADD_ACCOUNT_ACTIVITY = ComponentName.unflattenFromString(
@@ -161,19 +160,6 @@ public class PixelPropsUtils {
             "com.tencent.tmgp.sgame"
     };
 
-    // Codenames for currently supported Pixels by Google
-    private static final String[] pixelCodenames = {
-            "cheetah",
-            "panther",
-            "bluejay",
-            "oriole",
-            "raven",
-            "barbet",
-            "redfin",
-            "bramble",
-            "sunfish"
-    };
-
     private static volatile String sProcessName;
     private static volatile boolean sIsGms, sIsFinsky, sIsPhotos;
 
@@ -287,8 +273,6 @@ public class PixelPropsUtils {
         if (packageName.startsWith("com.google.")
                 || Arrays.asList(extraPackagesToChange).contains(packageName)) {
 
-            boolean isPixelDevice = Arrays.asList(pixelCodenames).contains(SystemProperties.get(DEVICE));
-
             if (packageName.equals("com.android.vending")) {
                 sIsFinsky = true;
             }
@@ -297,11 +281,8 @@ public class PixelPropsUtils {
                 if (SystemProperties.getBoolean("persist.sys.pixelprops.gphotos", true)) {
                     propsToChange.putAll(propsToChangePixelXL);
                 } else {
-                    if (isPixelDevice) return;
                     propsToChange.putAll(propsToChangePixel5);
                 }
-            } else if (isPixelDevice) {
-                return;
             } else {
                 if (Arrays.asList(packagesToChangePixel7Pro).contains(packageName)) {
                     propsToChange.putAll(propsToChangePixel7Pro);
