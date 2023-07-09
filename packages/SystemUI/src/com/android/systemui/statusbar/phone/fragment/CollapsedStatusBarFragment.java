@@ -143,6 +143,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private final CarrierConfigTracker mCarrierConfigTracker;
     private final StatusBarHideIconsForBouncerManager mStatusBarHideIconsForBouncerManager;
     private final StatusBarIconController.DarkIconManager.Factory mDarkIconManagerFactory;
+    private final TunerService mTunerService;
     private final DumpManager mDumpManager;
     private final StatusBarWindowStateController mStatusBarWindowStateController;
     private final KeyguardUpdateMonitor mKeyguardUpdateMonitor;
@@ -224,6 +225,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             CarrierConfigTracker carrierConfigTracker,
             CollapsedStatusBarFragmentLogger collapsedStatusBarFragmentLogger,
             OperatorNameViewController.Factory operatorNameViewControllerFactory,
+            TunerService tunerService,
             DumpManager dumpManager,
             StatusBarWindowStateController statusBarWindowStateController,
             KeyguardUpdateMonitor keyguardUpdateMonitor
@@ -245,6 +247,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mCarrierConfigTracker = carrierConfigTracker;
         mCollapsedStatusBarFragmentLogger = collapsedStatusBarFragmentLogger;
         mOperatorNameViewControllerFactory = operatorNameViewControllerFactory;
+        mTunerService = tunerService;
         mDumpManager = dumpManager;
         mStatusBarWindowStateController = statusBarWindowStateController;
         mKeyguardUpdateMonitor = keyguardUpdateMonitor;
