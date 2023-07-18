@@ -807,6 +807,9 @@ public class ApplicationPackageManager extends PackageManager {
             };
 
     private static final String[] pTensorCodenames = {
+            "felix",
+            "tangorpro",
+            "lynx",
             "cheetah",
             "panther",
             "bluejay",
@@ -846,8 +849,7 @@ public class ApplicationPackageManager extends PackageManager {
     public boolean hasSystemFeature(String name, int version) {
         String packageName = ActivityThread.currentPackageName();
         if (packageName != null &&
-                packageName.equals("com.google.android.apps.photos") &&
-                SystemProperties.getBoolean("persist.sys.pixelprops.gphotos", true)) {
+                packageName.equals("com.google.android.apps.photos")) {
             if (Arrays.asList(featuresPixel).contains(name)) return false;
             if (Arrays.asList(featuresTensor).contains(name)) return false;
             if (Arrays.asList(featuresNexus).contains(name)) return true;

@@ -270,9 +270,9 @@ import com.android.server.statusbar.StatusBarManagerInternal;
 import com.android.server.uri.NeededUriGrants;
 import com.android.server.uri.UriGrantsManagerInternal;
 import com.android.server.usage.AppStandbyInternal;
+import com.android.internal.util.derp.PixelPropsUtils;
 
 import com.android.internal.derp.applications.LineageActivityManager;
-import com.android.internal.util.derp.PixelPropsUtils;
 import com.android.internal.util.derp.cutout.CutoutFullscreenController;
 
 import java.io.BufferedReader;
