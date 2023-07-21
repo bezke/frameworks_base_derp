@@ -330,9 +330,9 @@ public class VolumeDialogImplTest extends SysuiTestCase {
 
         // assert icon is new based on res id
         assertEquals(mDialog.mVolumeRingerIconDrawableId,
-                R.drawable.ic_speaker_on);
+                R.drawable.ic_volume_ringer);
         assertEquals(mDialog.mVolumeRingerMuteIconDrawableId,
-                R.drawable.ic_speaker_mute);
+                R.drawable.ic_volume_ringer_mute);
     }
 
     @Test

@@ -408,8 +408,8 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
      */
     private void updateRingerModeIconSet() {
         if (mSeparateNotification) {
-            mVolumeRingerIconDrawableId = R.drawable.ic_speaker_on;
-            mVolumeRingerMuteIconDrawableId = R.drawable.ic_speaker_mute;
+            mVolumeRingerIconDrawableId = R.drawable.ic_volume_ringer;
+            mVolumeRingerMuteIconDrawableId = R.drawable.ic_volume_ringer_mute;
         } else {
             mVolumeRingerIconDrawableId = R.drawable.ic_volume_ringer;
             mVolumeRingerMuteIconDrawableId = R.drawable.ic_volume_ringer_mute;
@@ -431,9 +431,9 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
                 .findFirst();
         if (volumeRow.isPresent()) {
             VolumeRow volRow = volumeRow.get();
-            volRow.iconRes = mSeparateNotification ? R.drawable.ic_ring_volume
+            volRow.iconRes = mSeparateNotification ? R.drawable.ic_volume_ringer
                     : R.drawable.ic_volume_ringer;
-            volRow.iconMuteRes = mSeparateNotification ? R.drawable.ic_ring_volume_off
+            volRow.iconMuteRes = mSeparateNotification ? R.drawable.ic_volume_ringer_mute
                     : R.drawable.ic_volume_ringer_mute;
             volRow.setIcon(volRow.iconRes, mContext.getTheme());
         }
@@ -793,11 +793,11 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
                     R.drawable.ic_volume_media, R.drawable.ic_volume_media_mute, true, true);
             if (!AudioSystem.isSingleVolume(mContext)) {
                 if (mSeparateNotification) {
-                    addRow(AudioManager.STREAM_RING, R.drawable.ic_ring_volume,
-                            R.drawable.ic_ring_volume_off, true, false);
+                    addRow(AudioManager.STREAM_RING, R.drawable.ic_volume_ringer,
+                            R.drawable.ic_volume_ringer_mute, true, false);
                 } else {
                     addRow(AudioManager.STREAM_RING, R.drawable.ic_volume_ringer,
-                            R.drawable.ic_volume_ringer, true, false);
+                            R.drawable.ic_volume_ringer_mute, true, false);
                 }
 
                 addRow(STREAM_ALARM,
